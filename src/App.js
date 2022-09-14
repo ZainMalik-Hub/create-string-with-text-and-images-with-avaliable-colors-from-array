@@ -4,7 +4,7 @@ import Text from "../src/components/pages/TextPage";
 
 function App() {
   return (
-    <div className="App">
+    <div className='Aphhhh'>
       <Text />
     </div>
   );
