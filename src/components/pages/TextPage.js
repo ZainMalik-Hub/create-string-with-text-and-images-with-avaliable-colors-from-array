@@ -12,7 +12,6 @@ import underlineWaves from "../../assets/underlineWaves.svg";
 
 function Text() {
   const [notes, setnotes] = useState();
-  const [dText, setDtext] = useState();
   const url = "https://www.entwurf.co.uk/api/code-test/7439028";
   useEffect(() => {
     getTextApi();
@@ -26,9 +25,7 @@ function Text() {
       })
       .catch((error) => console.error(`Error: ${error} `));
   };
-  //   console.log("response", notes?.data?.keywordList);
   let text = notes?.data?.sectionTextCopy;
-  const keywords = notes?.data?.keywordList;
 
   notes?.data?.keywordList.forEach((v) => {
     if (text.includes(v.keyword)) {
@@ -71,8 +68,7 @@ function Text() {
     <div style={{ backgroundColor: "blue", display: "flex" }}>
       <div
         style={{ fontSize: "30px", width: "400px" }}
-        dangerouslySetInnerHTML={{ __html: `${text}` }}
-      ></div>
+        dangerouslySetInnerHTML={{ __html: `${text}` }}></div>
     </div>
   );
 }
